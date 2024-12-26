@@ -1,7 +1,10 @@
 #Proyecto
 #Integrantes: Luis Terrones C.I:  ,  Sebastian Veloso  C.I: 32.153.454
 
-def calculadro_de_puntajes(contraseña, patrones):
+def calculadro_de_puntajes(contrasena):
+    if len(contrasena) < 8
+    return "La contrasena tiene que tener minimo 8 caracteres"
+    
     puntos = 0
     minuscula = "abcdefghijklmnñopqrstuvwxyz"
     mayuscula = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
