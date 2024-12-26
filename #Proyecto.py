@@ -15,22 +15,30 @@ def calculadro_de_puntajes(contraseña):
     tiene_mayuscula = False
     tiene_numero = False
     tiene_simbolo = False
+    
+    cantidad_minuscu = 0
+    cantidad_mayusculas = 0
+    cantidad_numeros = 0
     cantidad_simbolos = 0
 
     #Se analizan los caracteres
     for i in contraseña:
         if i in minuscula:
             tiene_minuscula = True 
+            cantidad_minuscu += 1
 
         if i in mayuscula:
             tiene_mayuscula = True 
+            cantidad_mayuscula += 1
+            
         if i in numeros:
             tiene_numero = True 
-            cantidad_simbolos = cantidad_simbolos + 1
+            cantidad_numeros += 1
+            
+            cantidad_simbolos 
         if i in simbolos:
             tiene_simbolos = True
+            cantidad_simbolos += 1
 
-    for i in numeros: 
-            tiene_numero = True 
-            cantidad_simbolos = cantidad_simbolos + 1
+
 
