@@ -5,13 +5,10 @@
 
 contraseña = input("Introduzca su contraseña: ")
 
-def calculadro_de_puntajes(contraseña):
-    while len(contraseña) < 8:
-        print("La contraseña tiene que tener como minimo 8 caracteres, introduzca de nuevo: ")
-    return contraseña
-
 def calculadora_de_puntajes(contraseña):
-    
+    while len(contraseña) < 8:
+        contraseña = input("La contraseña tiene que tener como minimo 8 caracteres, introduzca de nuevo: ")
+
     puntos = 0
     minuscula = "abcdefghijklmnñopqrstuvwxyz"
     mayuscula = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
@@ -43,12 +40,10 @@ def calculadora_de_puntajes(contraseña):
             tiene_numero = True 
             puntos += 1
             
-            cantidad_simbolos 
         if i in simbolos:
-            tiene_simbolos = True
+            tiene_simbolo = True
             puntos += 1
     return puntos
+
 resultado = calculadora_de_puntajes(contraseña)
 print("Tu contraseña tiene ", resultado, "puntajes")
-
-
