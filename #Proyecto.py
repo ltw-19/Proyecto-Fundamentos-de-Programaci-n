@@ -1,9 +1,9 @@
 #Proyecto
-#Integrantes: Luis Terrones C.I:  ,  Sebastian Veloso  C.I: 32.153.454
+#Integrantes: 
+# Luis Terrones C.I:  
+# Sebastian Veloso  C.I: 32.153.454
 
-def calculadro_de_puntajes(contrasena):
-    if len(contrasena) < 8
-    return "La contrasena tiene que tener minimo 8 caracteres"
+def calculadro_de_puntajes(contraseña):
     
     puntos = 0
     minuscula = "abcdefghijklmnñopqrstuvwxyz"
@@ -17,12 +17,18 @@ def calculadro_de_puntajes(contrasena):
     tiene_simbolo = False
     cantidad_simbolos = 0
 
-    for i in contrasena:
+    #Se analizan los caracteres
+    for i in contraseña:
         if i in minuscula:
-            tiene_minuscula += True 
+            tiene_minuscula = True 
 
         if i in mayuscula:
-            tiene_mayuscula  = True 
+            tiene_mayuscula = True 
+        if i in numeros:
+            tiene_numero = True 
+            cantidad_simbolos = cantidad_simbolos + 1
+        if i in simbolos:
+            tiene_simbolos = True
 
     for i in numeros: 
             tiene_numero = True 
