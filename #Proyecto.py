@@ -4,6 +4,8 @@
 # Sebastian Veloso  C.I: 32.153.454
 
 def calculadro_de_puntajes(contraseña):
+    if len(contrasena) < 8
+    return "La contrasena tiene que tenerm inimo 8 caracteres"
     
     puntos = 0
     minuscula = "abcdefghijklmnñopqrstuvwxyz"
@@ -41,5 +43,6 @@ def calculadro_de_puntajes(contraseña):
             tiene_simbolos = True
             cantidad_simbolos += 1
 
+        puntos += len(contrasena) #1 punto por cada caracter 
 
 
