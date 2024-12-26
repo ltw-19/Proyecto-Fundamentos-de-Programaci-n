@@ -17,12 +17,12 @@ def calculadro_de_puntajes(contrasena):
     tiene_simbolo = False
     cantidad_simbolos = 0
 
-    for i in contraseña:
+    for i in contrasena:
         if i in minuscula:
-            tiene_minuscula = True 
+            tiene_minuscula += True 
 
         if i in mayuscula:
-            tiene_mayuscula = True 
+            tiene_mayuscula  = True 
 
     for i in numeros: 
             tiene_numero = True 
