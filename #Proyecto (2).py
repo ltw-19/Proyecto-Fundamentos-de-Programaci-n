@@ -30,24 +30,33 @@ def calculadora_de_puntajes(contraseña):
         puntos += 1
         if i in minuscula:
             tiene_minuscula = True 
-            puntos += 1
 
         if i in mayuscula:
             tiene_mayuscula = True 
-            puntos += 1
             
         if i in numeros:
             tiene_numero = True 
-            puntos += 1
             
         if i in simbolos:
             tiene_simbolo = True
-            puntos += 3
             cantidad_simbolos += 1
-            if cantidad_simbolos > 1:
-                puntos = 2 * (cantidad_simbolos - 1) #Aqui se realiza un incremento de la variable.
-                #En primer lugar se resta el valor de la cantidad de simbolos -1. Luego ese resultado se multiplica por 2.
-                #Luego ese valor resultante se suma al valor de puntos
+
+    
+    if tiene_minuscula:
+        puntos += 1
+    
+    if tiene_mayuscula:
+        puntos +=1
+    
+    if tiene_numero:
+        puntos += 1
+    
+    if tiene_simbolo == True:
+        puntos += 3
+        if cantidad_simbolos > 1:
+            puntos += 2 * (cantidad_simbolos - 1) #Aqui se realiza un incremento de la variable.
+            #En primer lugar se resta el valor de la cantidad de simbolos -1. Luego ese resultado se multiplica por 2.
+            #Luego ese valor resultante se suma al valor de puntos.
 
     return puntos
 
@@ -59,7 +68,15 @@ def clasificacion_de_contraseñas(puntos):
         return "Moderada"
     elif puntos < 10:
         return "Debil"
-    
+
+# def ordenar_contraseña(lista_de_contraseñas):
+#     for i in range (0, len(arreglo), 1):
+
+#         for j in range (0, len(arreglo)-1, 1):
+#             if arreglo[j] < arreglo[j+1]:
+#                 aux = arreglo[j]
+#                 arreglo[j] = arreglo[j+1]
+#                 arreglo[j+1] = aux
 
 
 resultado_puntajes = calculadora_de_puntajes(contraseña)
