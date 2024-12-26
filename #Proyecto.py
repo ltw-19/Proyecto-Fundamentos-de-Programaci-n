@@ -6,6 +6,12 @@
 def calculadro_de_puntajes(contraseña):
     if len(contrasena) < 8
     return "La contrasena tiene que tenerm inimo 8 caracteres"
+    #Proyecto
+#Integrantes: 
+# Luis Terrones C.I:  
+# Sebastian Veloso  C.I: 32.153.454
+
+def calculadora_de_puntajes(contraseña):
     
     puntos = 0
     minuscula = "abcdefghijklmnñopqrstuvwxyz"
@@ -28,21 +34,20 @@ def calculadro_de_puntajes(contraseña):
         puntos += 1
         if i in minuscula:
             tiene_minuscula = True 
-            cantidad_minuscu += 1
+            puntos += 1
 
         if i in mayuscula:
             tiene_mayuscula = True 
-            cantidad_mayuscula += 1
+            puntos += 1
             
         if i in numeros:
             tiene_numero = True 
-            cantidad_numeros += 1
+            puntos += 1
             
             cantidad_simbolos 
         if i in simbolos:
             tiene_simbolos = True
-            cantidad_simbolos += 1
+            puntos += 1
 
-        puntos += len(contrasena) #1 punto por cada caracter 
 
 
