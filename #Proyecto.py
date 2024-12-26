@@ -23,6 +23,7 @@ def calculadro_de_puntajes(contraseña):
 
     #Se analizan los caracteres
     for i in contraseña:
+        puntos += 1
         if i in minuscula:
             tiene_minuscula = True 
             cantidad_minuscu += 1
