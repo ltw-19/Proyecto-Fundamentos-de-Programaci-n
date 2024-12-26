@@ -48,6 +48,8 @@ def calculadora_de_puntajes(contraseña):
         if i in simbolos:
             tiene_simbolos = True
             puntos += 1
-
+    return puntos
+resultado = calculadora_de_puntajes(contraseña)
+print("Tu contraseña tiene ", resultado, "puntajes")
 
 
