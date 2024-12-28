@@ -1,7 +1,12 @@
 #Proyecto
 #Integrantes: 
-# Luis Terrones C.I:  
+# Luis Terrones C.I: 31.870.499
 # Sebastian Veloso  C.I: 32.153.454
+
+arreglo = []
+def leer_archivo (archivo):
+    arreglo = []
+    return arreglo
 
 contraseña = input("Introduzca su contraseña: ")
 puntos = 0
@@ -69,14 +74,15 @@ def clasificacion_de_contraseñas(puntos):
     elif puntos < 10:
         return "Debil"
 
-# def ordenar_contraseña(lista_de_contraseñas):
-#     for i in range (0, len(arreglo), 1):
+#Se ordena el arreglo de contraseñas de mayor a menor utilizando el ordenamiento por burbuja
+def ordenar_contraseña(lista_de_contraseñas):
+    for i in range (0, len(arreglo), 1):
 
-#         for j in range (0, len(arreglo)-1, 1):
-#             if arreglo[j] < arreglo[j+1]:
-#                 aux = arreglo[j]
-#                 arreglo[j] = arreglo[j+1]
-#                 arreglo[j+1] = aux
+        for j in range (0, len(arreglo)-1, 1):
+            if arreglo[j] < arreglo[j+1]:
+                aux = arreglo[j]
+                arreglo[j] = arreglo[j+1]
+                arreglo[j+1] = aux
 
 
 resultado_puntajes = calculadora_de_puntajes(contraseña)
