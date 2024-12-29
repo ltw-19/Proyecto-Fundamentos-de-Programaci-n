@@ -144,6 +144,7 @@ while True:
     respuesta = input("introduzca una opcion: ")
     if respuesta == "S":
         realizar_ejecucion()
+        break
     elif respuesta == "N":
         break
     else:
