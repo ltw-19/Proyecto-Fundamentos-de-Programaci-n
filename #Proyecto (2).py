@@ -134,8 +134,8 @@ def exportar_archivo (nombre_archivo, contraseñas):
 #Esta funcion realiza la ejecucion completa
 def realizar_ejecucion ():
     #Se lee los dos archivos
-    contraseñas = leer_archivo("Proyecto/Contraseñas - Proyecto (Fundamentos de Programación).txt")
-    patrones = leer_archivo("Proyecto/Patrones obvios de contraseña - Proyecto (Fundamentos de Programación).txt")
+    contraseñas = leer_archivo("Contraseñas - Proyecto (Fundamentos de Programación).txt")
+    patrones = leer_archivo("Patrones obvios de contraseña - Proyecto (Fundamentos de Programación).txt")
 
     #El arreglo resultados se inicializa en vacio
     resultados = []
