@@ -22,17 +22,10 @@ def leer_archivo(nombre_de_archivo):
     if linea_actual: #Esto significa si la linea actual no esta vacia, es decir si existe una linea sin un salto de
         #linea al final, se agrega la "linea_actual" al arreglo "lineas"
         lineas.append(linea_actual)
-    # arreglo_contraseñas = archivo.readlines()
     return lineas #Esto retorna todas las lineas del archivo de texto como un arreglo
-
-
-# contraseña = input("Introduzca su contraseña: ")
-# puntos = 0
 
 #Aqui se calculan los puntajes
 def calculadora_de_puntajes(contraseña, patrones_contraseña):
-    # while len(contraseña) < 8:
-    #     contraseña = input("La contraseña tiene que tener como minimo 8 caracteres, introduzca de nuevo: ")
     patron = 0
     puntos = 0
     minuscula = "abcdefghijklmnñopqrstuvwxyz"
@@ -82,8 +75,6 @@ def calculadora_de_puntajes(contraseña, patrones_contraseña):
             #En primer lugar se resta el valor de la cantidad de simbolos -1. Luego ese resultado se multiplica por 2.
             #Después ese valor resultante se suma al valor de puntos.
             
-    # arreglo_patrones = leer_archivo_patrones()
-    # arreglo_patrones = leer_archivo_patrones()
     for patron in patrones_contraseña:
         if patron in contraseña:
             puntos -= 5
@@ -111,13 +102,6 @@ def ordenar_contraseña(arreglo_contraseñas):
                 arreglo_contraseñas[j+1] = aux
 
     return arreglo_contraseñas
-    # for i in range (0, len(arreglo_contraseñas), 1):
-
-    #     for j in range (0, len(arreglo_contraseñas)-1, 1):
-    #         if arreglo_contraseñas[j] < arreglo_contraseñas[j+1]:
-    #             aux = arreglo_contraseñas[j]
-    #             arreglo_contraseñas[j] = arreglo_contraseñas[j+1]
-    #             arreglo_contraseñas[j+1] = aux
 
 #Se exporta el archivo usando un ciclo con multiples iteradores, esto hace que se itere el arreglo de contraseñas
 #con cada uno de sus elementos
@@ -126,10 +110,6 @@ def exportar_archivo (nombre_archivo, contraseñas):
     for contraseña, puntos, categoria in contraseñas:
         archivo.write(contraseña + " | " + categoria + " | " + str(puntos) + "\n")
     archivo.close
-
-# resultado_puntajes = calculadora_de_puntajes(contraseña)
-# categoria = clasificacion_de_contraseñas(resultado_puntajes)
-# print(contraseña, "|", resultado_puntajes, "puntajes", "|",  categoria)
 
 #Esta funcion realiza la ejecucion completa
 def realizar_ejecucion ():
