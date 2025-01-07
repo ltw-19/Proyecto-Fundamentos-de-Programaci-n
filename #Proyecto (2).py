@@ -5,7 +5,6 @@
 
 #Se lee el archivo de contraseñas
 def leer_archivo(nombre_de_archivo):
-    """Lee un archivo y retorna una lista de líneas"""
     archivo = open(nombre_de_archivo, 'r', encoding="utf-8")
     contenido = archivo.read() #Se lee el contenido y se guarda en la variable contenido
     archivo.close() #Se cierra el archivo
@@ -17,9 +16,11 @@ def leer_archivo(nombre_de_archivo):
             lineas.append(linea_actual) #Si lo es, se agrega la linea actual al arreglo lineas
             linea_actual = "" #Se reinicia a una cadena vacia para comenzar a crear cada linea
         else:
-            linea_actual += caracter #En este caso si no hay salto de linea se va agregando el caracter 
+            linea_actual += caracter 
+            #En este caso si no hay salto de linea se va agregando el caracter 
             #a la variable actual
-    if linea_actual: #Esto significa si la linea actual no esta vacia, es decir si existe una linea sin un salto de
+    if linea_actual: 
+        #Esto significa si la linea actual no esta vacia, es decir si existe una linea sin un salto de
         #linea al final, se agrega la "linea_actual" al arreglo "lineas"
         lineas.append(linea_actual)
     return lineas #Esto retorna todas las lineas del archivo de texto como un arreglo
@@ -31,7 +32,6 @@ def calculadora_de_puntajes(contraseña, patrones_contraseña):
     minuscula = "abcdefghijklmnñopqrstuvwxyz"
     mayuscula = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
     numeros = "0123456789"
-    # simbolos = '@$%&*~`/¡!¿?#[]{,}.;()<>-_=\^|"'''
 
     tiene_minuscula = False
     tiene_mayuscula = False
@@ -73,8 +73,9 @@ def calculadora_de_puntajes(contraseña, patrones_contraseña):
         if cantidad_simbolos > 1:
             puntos += 2 * (cantidad_simbolos - 1) #Aqui se realiza un incremento de la variable.
             #En primer lugar se resta el valor de la cantidad de simbolos -1. Luego ese resultado se multiplica por 2.
-            #Después ese valor resultante se suma al valor de puntos.
-            
+            #Después ese valor resultante se suma al valor de puntos. Esto se hace para verificar y sumar si hay 
+            #simbolos diferentes, si hay simbolos adicionales al primero se otroga dos puntos mas por cada simbolo
+        
     for patron in patrones_contraseña:
         if patron in contraseña:
             puntos -= 5
@@ -93,7 +94,8 @@ def clasificacion_de_contraseñas(puntos):
 def ordenar_contraseña(arreglo_contraseñas):
     for i in range (0, len(arreglo_contraseñas), 1):
         for j in range (0, len(arreglo_contraseñas)-1, 1):
-            if arreglo_contraseñas[j][1] < arreglo_contraseñas[j+1][1]: #Se compara el segundo elemento de indice 1
+            if arreglo_contraseñas[j][1] < arreglo_contraseñas[j+1][1]: 
+                #Se compara el segundo elemento de indice 1
                 #de la contraseña en la posicion "j" con el segundo elemento de la contraseña en la posicion "j+1".
                 #Por lo tanto, si el segundo elemento de "arreglo_contraseñas[j]" es menor que el de
                 #"arreglo_contraseñas[j+1]" se intercambiara estos dos elementos
@@ -114,8 +116,8 @@ def exportar_archivo (nombre_archivo, contraseñas):
 #Esta funcion realiza la ejecucion completa
 def realizar_ejecucion ():
     #Se lee los dos archivos
-    contraseñas = leer_archivo("Contraseñas - Proyecto (Fundamentos de Programación).txt")
-    patrones = leer_archivo("Patrones obvios de contraseña - Proyecto (Fundamentos de Programación).txt")
+    contraseñas = leer_archivo("Proyecto/Contraseñas - Proyecto (Fundamentos de Programación).txt")
+    patrones = leer_archivo("Proyecto/Patrones obvios de contraseña - Proyecto (Fundamentos de Programación).txt")
 
     #El arreglo resultados se inicializa en vacio
     resultados = []
@@ -152,6 +154,9 @@ def bienvenida():
             print('Pulse "S" para continuar')
             print('Pulse "N" para salir')
             respuesta = input("Introduzca una opcion: ")
+            if respuesta == "S":
+                realizar_ejecucion()
+                break
 
 #Aqui se llama a la funcion de bienvenida
 bienvenida ()
