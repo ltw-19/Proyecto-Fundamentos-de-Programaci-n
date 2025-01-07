@@ -137,19 +137,19 @@ def realizar_ejecucion ():
 
     print("El proceso de creacion del archivo ha finalizado 'resultados_contraseñas.txt' generado")
 
+#Esta funcion da la bienvenida al usuario
 def bienvenida():
-    while True:
-        print("Bienvenido al clasificador de contraseñas")
-        print("Este programa ejecutara un archivo de texto con contraseñas, los ordenara y clasificara segun su puntaje")
-        print('Pulse "S" para continuar')
-        print('Pulse "N" para salir')
-        respuesta = input("introduzca una opcion: ")
-        if respuesta == "S":
-            realizar_ejecucion()
-            break
-        elif respuesta == "N":
-            return 0
-        else:
+    print("Bienvenido al clasificador de contraseñas")
+    print("Este programa ejecutara un archivo de texto con contraseñas, los ordenara y clasificara segun su puntaje")
+    print('Pulse "S" para continuar')
+    print('Pulse "N" para salir')
+    respuesta = input("introduzca una opcion: ")
+    if respuesta == "S":
+        realizar_ejecucion()
+    elif respuesta == "N":
+        return 0
+    else:
+        while True:
             print("Favor introduzca una opcion válida")
             print('Pulse "S" para continuar')
             print('Pulse "N" para salir')
@@ -157,6 +157,8 @@ def bienvenida():
             if respuesta == "S":
                 realizar_ejecucion()
                 break
+            elif respuesta == "N":
+                return 0
 
 #Aqui se llama a la funcion de bienvenida
 bienvenida ()
