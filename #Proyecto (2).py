@@ -87,7 +87,7 @@ def clasificacion_de_contraseñas(puntos):
         return "Fuerte"
     elif puntos >= 10:
         return "Moderada"
-    elif puntos < 10:
+    else:
         return "Debil"
 
 #Se ordena el arreglo de contraseñas de mayor a menor utilizando el ordenamiento por burbuja
@@ -107,11 +107,16 @@ def ordenar_contraseña(arreglo_contraseñas):
 
 #Se exporta el archivo usando un ciclo con multiples iteradores, esto hace que se itere el arreglo de contraseñas
 #con cada uno de sus elementos
-def exportar_archivo (nombre_archivo, contraseñas):
-    archivo = open(nombre_archivo, "w", encoding="utf-8")
-    for contraseña, puntos, categoria in contraseñas:
-        archivo.write(contraseña + " | " + categoria + " | " + str(puntos) + "\n")
-    archivo.close
+def exportar_archivo (nombre_archivo, contraseñas): #Aqui se define a la funcion con dos parametros, la primera que es el nombre del archivo
+    #donde se exportará los datos y la segunda un arreglo donde contiene las contraseñas, sus puntos y sus categorias
+    archivo = open(nombre_archivo, "w", encoding="utf-8") 
+    #Se abre el archivo con el nombre en modo de escritura "w". En tal caso que el archivo no exista se creará.
+    for contraseña, puntos, categoria in contraseñas: #Se itera el arreglo contraseñas con tres iteradores: contraseña, puntos y categoria
+        archivo.write(contraseña + " | " + categoria + " | " + str(puntos) + "\n") 
+        #En cada posicion se escribe una linea en el archivo, esa linea contiene la contraseña, la categoria y los puntos. El "\n" es para
+        #asegurar que cada linea se escriba en una nueva linea
+
+    archivo.close() #Se cierra el archivo
 
 #Esta funcion realiza la ejecucion completa
 def realizar_ejecucion ():
@@ -136,6 +141,8 @@ def realizar_ejecucion ():
     exportar_archivo("resultado_contraseñas.txt", resultados)
 
     print("El proceso de creacion del archivo ha finalizado 'resultados_contraseñas.txt' generado")
+    print("Gracias por utilizar nuestro clasificador de contraseñas")
+    print("Hasta luego")
 
 #Esta funcion da la bienvenida al usuario
 def bienvenida():
@@ -148,7 +155,7 @@ def bienvenida():
         realizar_ejecucion()
     elif respuesta == "N":
         return 0
-    else:
+    else: #Si el usuario introdujo una opcion invalida se crea un bucle hasta que el usuario digite una opcion válida
         while True:
             print("Favor introduzca una opcion válida")
             print('Pulse "S" para continuar')
