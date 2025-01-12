@@ -83,9 +83,13 @@ def calculadora_de_puntajes(contraseña, patrones_contraseña):
 
 #Esta funcion clasifica la contraseña segun el puntaje 
 def clasificacion_de_contraseñas(puntos):
-    if puntos >= 15:
-        return "Fuerte"
-    elif puntos >= 10:
+    if puntos > 100:
+        return "Impenetrable"
+    elif puntos > 35 and puntos <= 100:
+        return "Excelente"
+    elif puntos > 20 and puntos <= 35:
+        return "Buena"
+    elif puntos > 15 and puntos <= 20:
         return "Moderada"
     else:
         return "Débil"
@@ -112,7 +116,7 @@ def exportar_archivo (nombre_archivo, contraseñas): #Aqui se define a la funcio
     archivo = open(nombre_archivo, "w", encoding="utf-8") 
     #Se abre el archivo con el nombre en modo de escritura "w". En tal caso que el archivo no exista se creará.
     for contraseña, puntos, categoria in contraseñas: #Se itera el arreglo contraseñas con tres iteradores: contraseña, puntos y categoria
-        archivo.write("Contraseña: " + contraseña + " | " + "Categoria: " + categoria + " | " + "Puntos: " + str(puntos) + "\n") 
+        archivo.write("Contraseña: " + contraseña + " | " + "Categoría: " + categoria + " | " + "Puntos: " + str(puntos) + "\n") 
         #En cada posicion se escribe una linea en el archivo, esa linea contiene la contraseña, la categoria y los puntos. El "\n" es para
         #asegurar que cada linea se escriba en una nueva linea
 
