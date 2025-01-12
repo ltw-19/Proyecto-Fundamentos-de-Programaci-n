@@ -88,7 +88,7 @@ def clasificacion_de_contraseñas(puntos):
     elif puntos >= 10:
         return "Moderada"
     else:
-        return "Debil"
+        return "Débil"
 
 #Se ordena el arreglo de contraseñas de mayor a menor utilizando el ordenamiento por burbuja
 def ordenar_contraseña(arreglo_contraseñas):
@@ -112,7 +112,7 @@ def exportar_archivo (nombre_archivo, contraseñas): #Aqui se define a la funcio
     archivo = open(nombre_archivo, "w", encoding="utf-8") 
     #Se abre el archivo con el nombre en modo de escritura "w". En tal caso que el archivo no exista se creará.
     for contraseña, puntos, categoria in contraseñas: #Se itera el arreglo contraseñas con tres iteradores: contraseña, puntos y categoria
-        archivo.write(contraseña + " | " + categoria + " | " + str(puntos) + "\n") 
+        archivo.write("Contraseña: " + contraseña + " | " + "Categoria: " + categoria + " | " + "Puntos: " + str(puntos) + "\n") 
         #En cada posicion se escribe una linea en el archivo, esa linea contiene la contraseña, la categoria y los puntos. El "\n" es para
         #asegurar que cada linea se escriba en una nueva linea
 
