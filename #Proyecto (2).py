@@ -76,7 +76,7 @@ def calculadora_de_puntajes(contraseña, patrones_contraseña):
             #Después ese valor resultante se suma al valor de puntos. Esto se hace para verificar y sumar si hay 
             #simbolos diferentes, si hay simbolos adicionales al primero se otroga dos puntos mas por cada simbolo
         
-    for patron in patrones_contraseña:
+    for patron in patrones_contraseña: #Se verifica si hay patrones obvios en la contraseña
         if patron in contraseña:
             puntos -= 5
     return puntos
@@ -109,16 +109,17 @@ def ordenar_contraseña(arreglo_contraseñas):
 
     return arreglo_contraseñas
 
-#Se exporta el archivo usando un ciclo con multiples iteradores, esto hace que se itere el arreglo de contraseñas
+#Se exporta el archivo usando un ciclo con un iterador esto hace que se itere el arreglo de contraseñas
 #con cada uno de sus elementos
-def exportar_archivo (nombre_archivo, contraseñas): #Aqui se define a la funcion con dos parametros, la primera que es el nombre del archivo
-    #donde se exportará los datos y la segunda un arreglo donde contiene las contraseñas, sus puntos y sus categorias
+def exportar_archivo (nombre_archivo, contraseñas): #Aqui se define a la funcion con dos parametros, 
+    #la primera que es el nombre del archivo donde se exportará los datos y la segunda un arreglo 
+    # donde contiene las contraseñas, sus puntos y sus categorias
     archivo = open(nombre_archivo, "w", encoding="utf-8") 
     #Se abre el archivo con el nombre en modo de escritura "w". En tal caso que el archivo no exista se creará.
-    for contraseña, puntos, categoria in contraseñas: #Se itera el arreglo contraseñas con tres iteradores: contraseña, puntos y categoria
-        archivo.write("Contraseña: " + contraseña + " | " + "Categoría: " + categoria + " | " + "Puntos: " + str(puntos) + "\n") 
-        #En cada posicion se escribe una linea en el archivo, esa linea contiene la contraseña, la categoria y los puntos. El "\n" es para
-        #asegurar que cada linea se escriba en una nueva linea
+    for resultado in contraseñas: #Se itera el arreglo contraseñas
+        archivo.write("Contraseña: " + resultado[0] + " | " + "Categoría: " + resultado[2] + " | " + "Puntos: " + str(resultado[1]) + "\n")
+        #Se escribe en el archivo la contraseña, la categoria y los puntos, usando el iterador "resultado"
+        #en un ciclo for en el arreglo contraseñas
 
     archivo.close() #Se cierra el archivo
 
@@ -138,7 +139,7 @@ def realizar_ejecucion ():
         resultados.append([contraseña, puntos, categoria]) 
         #Esto agrega el arreglo de tres elementos a la variable resultados
 
-    #Se ordena la contraseñas mediante las contraseñas en la variable resultados
+    #Se ordena la contraseñas en la variable resultados
     ordenar_contraseña(resultados)
 
     #Se exporta el archivo con los resultados
@@ -146,7 +147,7 @@ def realizar_ejecucion ():
 
     print("El proceso de creacion del archivo ha finalizado 'resultados_contraseñas.txt' generado")
     print("Gracias por utilizar nuestro clasificador de contraseñas")
-    print("Hasta luego")
+    print("¡Hasta luego!")
 
 #Esta funcion da la bienvenida al usuario
 def bienvenida():
